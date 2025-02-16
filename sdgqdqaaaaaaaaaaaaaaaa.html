@@ -1,0 +1,170 @@
+Youcef Lazizi, [16/02/2025 23:10]
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 لعبة التانغرام - ذكاء ومتعة للأطفال 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #ffecd2, #fcb69f);
+            direction: rtl;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 { color: #ff4081; font-size: 26px; }
+        .product-image { width: 100%; border-radius: 10px; border: 4px solid #ff6f61; }
+        .benefits {
+            text-align: right;
+            background: #fff3f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #ff6f61;
+        }
+        .benefits h2 { color: #d81b60; text-align: center; }
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits li {
+            font-size: 16px;
+            padding: 5px 0;
+            color: #444;
+        }
+        .order-form { text-align: right; margin-top: 20px; }
+        label { font-size: 16px; font-weight: bold; }
+        input, select {
+            width: 100%; padding: 10px; margin: 5px 0 10px;
+            border: 2px solid #ff6f61; border-radius: 5px; font-size: 16px;
+        }
+        .btn {
+            display: block; width: 100%; background-color: #ff4081;
+            color: white; padding: 15px; font-size: 20px;
+            text-decoration: none; border-radius: 10px;
+            text-align: center; font-weight: bold;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover { background-color: #e91e63; }
+        .delivery-info { font-size: 18px; margin-top: 10px; font-weight: bold; color: #d81b60; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧩 لعبة التانغرام لتنمية ذكاء الأطفال 🚀</h1>
+        <img src="https://i.imgur.com/i7jeMGd.jpeg" class="product-image" alt="Tangram Game">
+        
+        <div class="benefits">
+            <h2>💡 لماذا هذه اللعبة رائعة لطفلك؟</h2>
+            <ul>
+                <li>🧠 **تنمية الذكاء والقدرة على حل المشكلات**</li>
+                <li>🎨 **تشجيع الإبداع والتفكير خارج الصندوق**</li>
+                <li>🤹 **تحسين المهارات الحركية الدقيقة**</li>
+                <li>👀 **زيادة التركيز والانتباه لفترات أطول**</li>
+                <li>🔢 **تعلم الأشكال الهندسية بأسلوب ممتع**</li>
+                <li>👨‍👩‍👧‍👦 **لعبة ممتعة لجميع أفراد العائلة!**</li>
+                <li>🚀 **تقليل الوقت أمام الشاشات واستبداله بنشاط ذهني**</li>
+                <li>📚 **تحسين مهارات الحساب والمنطق لدى الأطفال**</li>
+            </ul>
+        </div>
+
+        <p class="delivery-info">💰 **السعر: 2900 دينار جزائري**</p>
+
+        <div class="order-form">
+            <label>📛 الاسم الكامل</label>
+            <input type="text" id="name" placeholder="✍️ أدخل اسمك">
+
+            <label>📞 رقم الهاتف</label>
+            <input type="tel" id="phone" placeholder="📱 أدخل رقم الهاتف">
+
+            <label>📍 الولاية</label>
+            <select id="state" onchange="updateDelivery()">
+                <option value="" disabled selected>اختر ولايتك</option>
+                <option value="Alger">الجزائر (400 DA)</option>
+                <option value="Blida">البليدة (600 DA)</option>
+                <option value="Tipaza">تيبازة (600 DA)</option>
+                <option value="Boumerdes">بومرداس (600 DA)</option>
+
+Youcef Lazizi, [16/02/2025 23:10]
+<option value="Other">ولاية أخرى (سيتم تحديد السعر)</option>
+            </select>
+
+            <label>🏠 العنوان الكامل</label>
+            <input type="text" id="address" placeholder="🏡 أدخل عنوانك الكامل">
+
+            <p class="delivery-info" id="totalPrice">💰 السعر الإجمالي: 2900 DA + التوصيل</p>
+
+            <a href="#" class="btn" onclick="orderNow()">🚀 اطلب الآن عبر واتساب</a>
+        </div>
+    </div>
+
+    <script>
+        function updateDelivery() {
+            var state = document.getElementById("state").value;
+            var basePrice = 2900;
+            var deliveryPrice = 0;
+
+            if (state === "Alger") {
+                deliveryPrice = 400;
+            } else if (state === "Blida"  state === "Tipaza"  state === "Boumerdes") {
+                deliveryPrice = 600;
+            }
+
+            var totalPrice = basePrice + deliveryPrice;
+            document.getElementById("totalPrice").innerText = "💰 السعر الإجمالي: " + totalPrice + " DA";
+        }
+
+        function orderNow() {
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var state = document.getElementById("state").value;
+            var address = document.getElementById("address").value;
+
+            if (name === ""  phone === ""  state === "" || address === "") {
+                alert("⚠️ يرجى ملء جميع الحقول قبل الطلب.");
+                return;
+            }
+
+            var basePrice = 2900;
+            var deliveryPrice = 0;
+
+            if (state === "Alger") {
+                deliveryPrice = 400;
+            } else if (state === "Blida"  state === "Tipaza"  state === "Boumerdes") {
+                deliveryPrice = 600;
+            }
+
+            var totalPrice = basePrice + deliveryPrice;
+
+            var message = `🎉 طلب جديد! 🎉
+            📛 الاسم: ${name}
+            📞 رقم الهاتف: ${phone}
+            📍 الولاية: ${state}
+            🏡 العنوان: ${address}
+            💰 السعر الإجمالي: ${totalPrice} DA`;
+
+            var whatsappUrl = "https://wa.me/0549575285?text=" + encodeURIComponent(message);
+            window.location.href = whatsappUrl;
+        }
+    </script>
+
+</body>
+</html>
